@@ -3,7 +3,7 @@
 import numpy as np
 
 # This is your team name
-CREATOR = "BarebonesAI"
+CREATOR = "MsNovak"
 
 
 class PlayerAi:
@@ -112,6 +112,9 @@ class PlayerAi:
                     if "bases" in info[name]:
                         # Simply target the first base
                         t = info[name]["bases"][0]
+                        for base in info[name]["bases"]:
+                            if base.health < t.health:
+                                t = base
                         target = [t.x, t.y]
                         break
 
